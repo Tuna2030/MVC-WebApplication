@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PortfolioWebPage.Models.Appointment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Appointments</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<p align="center">
+    <br />
+    <a href="~/Appointments/Create" class="btn btn-default" role="button">New Appointment</a>
+    <br />
+    <br />
+</p>
+}
+
+    <table class="table">
+        <tr>
+            <th>
+                Doctor
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Doctor.first_name)
+                    @Html.DisplayFor(modelItem => item.Doctor.last_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.time)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>

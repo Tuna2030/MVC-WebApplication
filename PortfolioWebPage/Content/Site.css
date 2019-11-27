@@ -1,0 +1,67 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: mediumseagreen;
+    color: white;
+}
+
+div {
+    color: white;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    background-color: dodgerblue;
+    border-color: white;
+    width: 100%;
+}
+
+.bootstrap-datetimepicker-widget table .day:hover {
+    color:black;
+}
+
+
+.navbar {
+    background-color: dodgerblue;
+    color: white;
+}
+
+    .navbar .navbar-brand {
+        color: white;
+    }
+
+.mapboxgl-popup-content {
+    color: black;
+}
+
+.navbar .navbar-brand:hover {
+    color: mediumseagreen;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+    .navbar-inverse .navbar-nav > li > a:hover {
+        color: mediumseagreen;
+    }
+
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}

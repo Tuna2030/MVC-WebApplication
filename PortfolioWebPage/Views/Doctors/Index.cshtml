@@ -1,0 +1,75 @@
+﻿@model IEnumerable<PortfolioWebPage.Models.Doctor>
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Doctor List</h2>
+
+@if (User.Identity.GetUserName() == "admin@admin.com")
+{
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+
+}
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            E-Mail
+        </th>
+        <th>
+            Gender
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Phone Number
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.first_name)
+            @Html.DisplayFor(modelItem => item.last_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        @if (User.Identity.GetUserName() == "admin@admin.com")
+        {
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        }
+    </tr>
+    }
+
+</table>
